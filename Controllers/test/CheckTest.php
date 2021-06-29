@@ -21,5 +21,5 @@ foreach ($_POST['correct_answer'] as $k => $answer) {
 $percentage = $correct_answer * 100 / $number_of_questions;
 
 $sql = "INSERT INTO results (subject_id, users_id, percentage, number_of_correct_answers, number_of_questions)
-    VALUES ('6', '2'," . $percentage . "," . $correct_answer . "," . $number_of_questions . ");";
+    VALUES ('14', '2'," . $percentage . "," . $correct_answer . "," . $number_of_questions . ");";
 $pdo->exec($sql);

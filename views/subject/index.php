@@ -26,7 +26,7 @@ include 'Controllers/subject/create.php';
                     <span>&plus;</span>
                 </button>
                 <button onclick="location.href='views/test/create.php'" class="btn btn-success mt-2">Create Test <span>&plus;</span></button>
-                
+
 
                 <table class="table table-striped table-hover mt-2">
                     <thead class="th-dark">
@@ -47,7 +47,7 @@ include 'Controllers/subject/create.php';
                                 </td>
                             </tr>
                             <!-- Modal Create -->
-                            <!-- Modal Edit -->
+                            <!-- Modal Edit
                             <div class="modal fade" id="edit<?php $res->id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
                                 <div class="modal-dialog">
                                     <div class="modal-header">
@@ -68,7 +68,7 @@ include 'Controllers/subject/create.php';
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Modal Edit -->
                         <?php } ?>
                     </tbody>
@@ -106,6 +106,29 @@ include 'Controllers/subject/create.php';
             </form>
         </div>
     </div>
+    <!-- Modal Edit -->
+    <div class="modal fade" id="edit<?php $res->id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit subject</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="?id=<?php $res->id; ?>" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" value="<?php $res->name; ?>">
+                        <input type="text" id="subject_name" name="name" placeholder="Subject Name..." class="form-control">
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" name="edit">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Edit -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

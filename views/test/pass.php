@@ -16,16 +16,22 @@
 <body>
     <div class="container">
         <form action="/test/controllers/test/checktest.php" method="POST">
-            <?php foreach ($tests as $k => $test) : ?>
+            <?php foreach ($tests  as $k => $test) : ?>
                 <div class="mt-2">
                     <h3><?= ++$k . ". " . $test->question; ?></h3>
                     <input type="text" id="answer" name="correct_answer[<?= $test->id; ?>]" placeholder="Answer..." class="form-control">
                 </div>
             <?php endforeach; ?>
 
-            <div class="mt-2">
-                <button type="submit" class="btn btn-primary btn-block">Save</button>
-            </div>
+            <?php if (!empty($tests)) : ?>
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+                </div>
+            <?php else : ?>
+                <div class="mt-2">
+                    <h4 class="text-center">Nothing Found.</h4>
+                </div>
+            <?php endif ?>
         </form>
     </div>
 </body>
